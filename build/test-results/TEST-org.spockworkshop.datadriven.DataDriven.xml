@@ -1,0 +1,113 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="org.spockworkshop.datadriven.DataDriven" tests="26" failures="9" errors="0" timestamp="2013-12-23T22:07:11" hostname="allegro" time="0.207">
+  <properties/>
+  <testcase name="maximum of two numbers" classname="org.spockworkshop.datadriven.DataDriven" time="0.021"/>
+  <testcase name="maximum of two numbers with default unrolling[0]" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="maximum of two numbers with default unrolling[1]" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="maximum of two numbers with default unrolling[2]" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="max from 1 and 3 should be 3" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="max from 7 and 4 should be 7" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="max from 0 and 0 should be 0" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="list contains word: This" classname="org.spockworkshop.datadriven.DataDriven" time="0.001"/>
+  <testcase name="list contains word: is" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="list contains word: a" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="list contains word: small" classname="org.spockworkshop.datadriven.DataDriven" time="0.001"/>
+  <testcase name="list contains word: disadvantage" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="list from class: this" classname="org.spockworkshop.datadriven.DataDriven" time="0.1">
+    <failure message="Condition not satisfied:&#10;&#10;['Sparta', &quot;know&quot;, 'it'].contains(word)&#10;                         |        |&#10;                         false    this&#10;" type="org.gradle.messaging.remote.internal.PlaceholderException">Condition not satisfied:
+
+['Sparta', &quot;know&quot;, 'it'].contains(word)
+                         |        |
+                         false    this
+
+	at org.spockworkshop.datadriven.DataDriven.you can create class which will give you static list(DataDriven.groovy:60)
+</failure>
+  </testcase>
+  <testcase name="list from class: is" classname="org.spockworkshop.datadriven.DataDriven" time="0.001">
+    <failure message="Condition not satisfied:&#10;&#10;['Sparta', &quot;know&quot;, 'it'].contains(word)&#10;                         |        |&#10;                         false    is&#10;" type="org.gradle.messaging.remote.internal.PlaceholderException">Condition not satisfied:
+
+['Sparta', &quot;know&quot;, 'it'].contains(word)
+                         |        |
+                         false    is
+
+	at org.spockworkshop.datadriven.DataDriven.you can create class which will give you static list(DataDriven.groovy:60)
+</failure>
+  </testcase>
+  <testcase name="list from class: Sparta" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="list from class: And" classname="org.spockworkshop.datadriven.DataDriven" time="0.002">
+    <failure message="Condition not satisfied:&#10;&#10;['Sparta', &quot;know&quot;, 'it'].contains(word)&#10;                         |        |&#10;                         false    And&#10;" type="org.gradle.messaging.remote.internal.PlaceholderException">Condition not satisfied:
+
+['Sparta', &quot;know&quot;, 'it'].contains(word)
+                         |        |
+                         false    And
+
+	at org.spockworkshop.datadriven.DataDriven.you can create class which will give you static list(DataDriven.groovy:60)
+</failure>
+  </testcase>
+  <testcase name="list from class: you" classname="org.spockworkshop.datadriven.DataDriven" time="0.002">
+    <failure message="Condition not satisfied:&#10;&#10;['Sparta', &quot;know&quot;, 'it'].contains(word)&#10;                         |        |&#10;                         false    you&#10;" type="org.gradle.messaging.remote.internal.PlaceholderException">Condition not satisfied:
+
+['Sparta', &quot;know&quot;, 'it'].contains(word)
+                         |        |
+                         false    you
+
+	at org.spockworkshop.datadriven.DataDriven.you can create class which will give you static list(DataDriven.groovy:60)
+</failure>
+  </testcase>
+  <testcase name="list from class: know" classname="org.spockworkshop.datadriven.DataDriven" time="0.001"/>
+  <testcase name="list from class: id" classname="org.spockworkshop.datadriven.DataDriven" time="0.002">
+    <failure message="Condition not satisfied:&#10;&#10;['Sparta', &quot;know&quot;, 'it'].contains(word)&#10;                         |        |&#10;                         false    id&#10;" type="org.gradle.messaging.remote.internal.PlaceholderException">Condition not satisfied:
+
+['Sparta', &quot;know&quot;, 'it'].contains(word)
+                         |        |
+                         false    id
+
+	at org.spockworkshop.datadriven.DataDriven.you can create class which will give you static list(DataDriven.groovy:60)
+</failure>
+  </testcase>
+  <testcase name="list from file: this" classname="org.spockworkshop.datadriven.DataDriven" time="0.003">
+    <failure message="Condition not satisfied:&#10;&#10;['Sparta', 'know', 'it'].contains(word)&#10;                         |        |&#10;                         false    this&#10;" type="org.gradle.messaging.remote.internal.PlaceholderException">Condition not satisfied:
+
+['Sparta', 'know', 'it'].contains(word)
+                         |        |
+                         false    this
+
+	at org.spockworkshop.datadriven.DataDriven.you can access file to get values(DataDriven.groovy:69)
+</failure>
+  </testcase>
+  <testcase name="list from file: is" classname="org.spockworkshop.datadriven.DataDriven" time="0.001">
+    <failure message="Condition not satisfied:&#10;&#10;['Sparta', 'know', 'it'].contains(word)&#10;                         |        |&#10;                         false    is&#10;" type="org.gradle.messaging.remote.internal.PlaceholderException">Condition not satisfied:
+
+['Sparta', 'know', 'it'].contains(word)
+                         |        |
+                         false    is
+
+	at org.spockworkshop.datadriven.DataDriven.you can access file to get values(DataDriven.groovy:69)
+</failure>
+  </testcase>
+  <testcase name="list from file: Sparta" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="list from file: and" classname="org.spockworkshop.datadriven.DataDriven" time="0.001">
+    <failure message="Condition not satisfied:&#10;&#10;['Sparta', 'know', 'it'].contains(word)&#10;                         |        |&#10;                         false    and&#10;" type="org.gradle.messaging.remote.internal.PlaceholderException">Condition not satisfied:
+
+['Sparta', 'know', 'it'].contains(word)
+                         |        |
+                         false    and
+
+	at org.spockworkshop.datadriven.DataDriven.you can access file to get values(DataDriven.groovy:69)
+</failure>
+  </testcase>
+  <testcase name="list from file: you" classname="org.spockworkshop.datadriven.DataDriven" time="0.002">
+    <failure message="Condition not satisfied:&#10;&#10;['Sparta', 'know', 'it'].contains(word)&#10;                         |        |&#10;                         false    you&#10;" type="org.gradle.messaging.remote.internal.PlaceholderException">Condition not satisfied:
+
+['Sparta', 'know', 'it'].contains(word)
+                         |        |
+                         false    you
+
+	at org.spockworkshop.datadriven.DataDriven.you can access file to get values(DataDriven.groovy:69)
+</failure>
+  </testcase>
+  <testcase name="list from file: know" classname="org.spockworkshop.datadriven.DataDriven" time="0.0"/>
+  <testcase name="list from file: it" classname="org.spockworkshop.datadriven.DataDriven" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

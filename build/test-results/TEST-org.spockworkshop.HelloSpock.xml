@@ -1,0 +1,9 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="org.spockworkshop.HelloSpock" tests="3" failures="0" errors="0" timestamp="2013-12-23T22:07:11" hostname="allegro" time="0.379">
+  <properties/>
+  <testcase name="should be very short" classname="org.spockworkshop.HelloSpock" time="0.293"/>
+  <testcase name="should have nice asserts built-in in groovy" classname="org.spockworkshop.HelloSpock" time="0.032"/>
+  <testcase name="exception handling should be... handled" classname="org.spockworkshop.HelloSpock" time="0.053"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

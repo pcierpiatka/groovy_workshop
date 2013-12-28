@@ -1,0 +1,13 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="org.spockworkshop.groovy.Groovy_02" tests="7" failures="0" errors="0" timestamp="2013-12-23T22:07:12" hostname="allegro" time="0.055">
+  <properties/>
+  <testcase name="test03_GStringTrap" classname="org.spockworkshop.groovy.Groovy_02" time="0.024"/>
+  <testcase name="test02_GString" classname="org.spockworkshop.groovy.Groovy_02" time="0.0"/>
+  <testcase name="test06_booleanExpression" classname="org.spockworkshop.groovy.Groovy_02" time="0.007"/>
+  <testcase name="test07_booleanExpression" classname="org.spockworkshop.groovy.Groovy_02" time="0.013"/>
+  <testcase name="test01_GString" classname="org.spockworkshop.groovy.Groovy_02" time="0.001"/>
+  <testcase name="test04_elvis" classname="org.spockworkshop.groovy.Groovy_02" time="0.003"/>
+  <testcase name="test05_elvis" classname="org.spockworkshop.groovy.Groovy_02" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
