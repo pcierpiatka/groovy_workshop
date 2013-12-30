@@ -12,7 +12,6 @@ public class OrderServiceImpl implements OrderService {
 
     private Map<String, Order> orderRepository = new HashMap<>();
 
-
     @Override
     public Order createOrder(String orderId, User buyer) {
         Order newOrder = new Order(orderId, buyer);
@@ -20,7 +19,6 @@ public class OrderServiceImpl implements OrderService {
         orderRepository.put(newOrder.getOrderId(), newOrder);
         return newOrder;
     }
-
 
     @Override
     public void checkout(Order order) {

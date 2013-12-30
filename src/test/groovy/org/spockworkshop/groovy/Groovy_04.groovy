@@ -7,23 +7,21 @@ import org.spockworkshop.domain.Address
  * GroovyPojo
  */
 class Groovy_04 extends GroovyTestCase {
+
     void test01_construction() {
 
-        JavaPerson elvis = new JavaPerson(firstName:'Elvis',lastName:'Presley')
-        JavaPerson wiolleta = new JavaPerson('Violetta', 'Villas', new Address('PL'))
-
-        JavaPerson cos = new JavaPerson(firstName: "Roman", lastName: "Otton")
+        JavaPerson elvis = new JavaPerson('Elvis', 'Presley')
+        JavaPerson violetta = new JavaPerson('Violetta', 'Villas', new Address('PL'))
 
         GroovyPerson brian = new GroovyPerson(firstName: 'Brian', lastName: 'Johnson', address: new Address('USA'))
         GroovyPerson frank = new GroovyPerson(firstName : 'Frank')
         GroovyPerson german = new GroovyPerson(address: new Address('GER'))
 
         assert elvis.firstName == 'Elvis'
-        assert wiolleta.firstName == 'Wiolleta'
+        assert violetta.firstName == 'Violetta'
         assert frank.firstName == 'Frank'
         assert brian.firstName == 'Brian'
         assert german.address.country == 'GER'
-        assert cos.firstName == 'Roman'
     }
 
     void test02_defaultValues() {

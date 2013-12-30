@@ -62,7 +62,7 @@ public class Order {
         this.buyer = buyer;
     }
 
-    public OrderStatus getOrderStatus() {
+  public OrderStatus getOrderStatus() {
         return orderStatus;
     }
 

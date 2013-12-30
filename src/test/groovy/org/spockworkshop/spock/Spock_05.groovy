@@ -4,6 +4,7 @@ import org.spockworkshop.domain.Order
 import org.spockworkshop.domain.OrderStatus
 import org.spockworkshop.domain.User
 import org.spockworkshop.service.OrderService
+import spock.lang.Ignore
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -11,6 +12,7 @@ import spock.lang.Specification
  * Stub/Mock
  */
 class Spock_05 extends Specification {
+
     @Shared
     User user = new User();
 
@@ -59,6 +61,7 @@ class Spock_05 extends Specification {
            (0..1) * orderService.createOrder('1', user)
     }
 
+    @Ignore
     def "errors should be nice to read" () {
         given:
              OrderService orderService = Mock(OrderService)

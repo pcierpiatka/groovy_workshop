@@ -1,7 +1,6 @@
 package org.spockworkshop.spock
 
-import groovy.sql.Sql
-import org.junit.Ignore
+import spock.lang.Ignore
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll

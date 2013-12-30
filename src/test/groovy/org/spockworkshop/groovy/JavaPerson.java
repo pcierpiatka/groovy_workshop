@@ -8,7 +8,7 @@ public class JavaPerson {
     private String lastName;
     private Address address;
 
-   /* public JavaPerson(String firstName) {
+    public JavaPerson(String firstName) {
         this.firstName = firstName;
     }
 
@@ -19,7 +19,6 @@ public class JavaPerson {
     public JavaPerson(String firstName, Address address) {
         this(firstName, null, address);
     }
-*/
     public JavaPerson(String firstName, String lastName, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;

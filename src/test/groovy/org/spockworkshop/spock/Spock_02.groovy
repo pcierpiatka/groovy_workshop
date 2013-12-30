@@ -5,10 +5,11 @@ import org.spockworkshop.domain.OrderStatus
 import org.spockworkshop.domain.User
 import org.spockworkshop.exception.OrderNotFoundException
 import org.spockworkshop.service.OrderService
+
 import org.spockworkshop.service.OrderServiceImpl
+import spock.lang.Ignore
 import spock.lang.Shared
 import spock.lang.Specification
-import spock.lang.Unroll
 
 /**
  *  basic
@@ -52,11 +53,13 @@ class Spock_02 extends Specification {
             thrown(OrderNotFoundException)
     }
 
+    @Ignore
     def "readable error message"() {
         expect:
             'To be' == 'or not to be'
     }
 
+    @Ignore
     def "readable error cd"() {
         given:
             Map<String, String> maps = [beer : [dark : "Guinness", white : "Heineken" ]]
