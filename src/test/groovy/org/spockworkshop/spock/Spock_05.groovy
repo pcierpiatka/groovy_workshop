@@ -58,7 +58,14 @@ class Spock_05 extends Specification {
             orderService.createOrder('1', user)
         then:
             1 * orderService.createOrder('1', user)
-           (0..1) * orderService.createOrder('1', user)
+//           (0..1) * orderService.createOrder('1', user)
+//            1 * orderService.createOrder(_,_)      //whatever
+//            1 * orderService.createOrder(!'2', user) //not this price
+//            1 * orderService.createOrder(*_)     // any argument list including empty list
+//            1 * orderService.createOrder(!null, user)  // any non-null argument
+//            1 * orderService.createOrder(_ as String, _ as User)
+//              _ * orderService./c.*eOrder/('1', user)
+
     }
 
     @Ignore

@@ -1,5 +1,6 @@
 package org.spockworkshop.spock
 
+import org.spockworkshop.domain.Account
 import spock.lang.Ignore
 import spock.lang.Shared
 import spock.lang.Specification
@@ -90,6 +91,27 @@ class Spock_04 extends Specification {
 
         where:
         [a, b, _, c] << staticList
+    }
 
+
+    @Unroll
+    def "should be able to use with given/when/then"() {
+        given:
+        def account = new Account(balance)
+
+        when:
+        account.withdraw(amount)
+
+        then:
+        account.balance == remaning
+
+        //Used in a then-block to access an expression's value at the time just
+        //before the previous where-block was entered
+        //account.balance == old(account.balance) - amount
+
+        where:
+        balance | amount  || remaning
+          10.0  |  5.0    ||   5.0
+           3.0  |  2.0    ||   1.0
     }
 }
