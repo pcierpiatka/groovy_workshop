@@ -3,72 +3,41 @@ package org.spockworkshop.groovy
 import org.spockworkshop.domain.Address
 
 /**
- * Collections
- * Closures
+ * JavaPojo
+ * GroovyPojo
  */
 class Groovy_03 extends GroovyTestCase {
 
-    void test01_list() {
-        List<String> strings = ['One', 'Two', 'Tree']
-        List<JavaPerson> persons = [new JavaPerson('Me'), new JavaPerson('You'), new JavaPerson('Her')]
-        def list = []
-        list << 1
-        list << 2
-        list << 3
+    void test01_construction() {
 
-        assert strings.size() == 3
-        assert persons.size() == 3
-        assert list.size() == 3
+        JavaPerson elvis = new JavaPerson('Elvis', 'Presley')
+        JavaPerson violetta = new JavaPerson('Violetta', 'Villas', new Address('PL'))
+
+        GroovyPerson brian = new GroovyPerson(firstName: 'Brian', lastName: 'Johnson', address: new Address('USA'))
+        GroovyPerson frank = new GroovyPerson(firstName : 'Frank')
+        GroovyPerson german = new GroovyPerson(address: new Address('GER'))
+
+        assert elvis.firstName == 'Elvis'
+        assert violetta.firstName == 'Violetta'
+        assert frank.firstName == 'Frank'
+        assert brian.firstName == 'Brian'
+        assert german.address.country == 'GER'
     }
 
-    void test02_array() {
-        def integers = [1,2,3] as Integer[]
-        def longs = [1,2,3] as Long[]
+    void test02_defaultValues() {
+        GroovyPerson anonymous = new GroovyPerson()
 
-        assert integers.class == Integer[].class
-        assert longs.class == Long[].class
+        assert  anonymous.firstName == 'Anonymous'
     }
 
-    void test03_range() {
-        def alphabet = 'a'..'z'
-        def numbers = 1..24
-        //def numbers = [1..24] -> it's an array with array 1..24
+    void test03_with() {
 
-        assert alphabet.size() == 26
-        assert alphabet[0..4] == ['a','b','c','d','e']
-        assert numbers.size() == 24
-        assert numbers[0..4] == [1,2,3,4,5]
+        GroovyPerson person = new GroovyPerson()
+        person.with {
+            firstName = 'Ron'
+            lastName = 'Romanski'
+        }
+
+        assert person.firstName == 'Ron'
     }
-
-    void test04_maps() {
-        def map = [one : 1, two : 2]
-        map['tree'] = 3
-
-        assert map.size() == 3
-        assert map['two'] == 2
-    }
-
-    void test05_closures() {
-        def list = ['Rob', 'Ron', 'Elvis', 'Arnold']
-
-        def result = list.findAll {it -> it.startsWith('R')}
-
-        assert result == ['Rob', 'Ron']
-    }
-
-    void test06_closures() {
-        def myConst = 5
-        def incByConst = { num -> num + myConst }
-
-        assert incByConst(10) == 15
-    }
-
-    void test07_closures() {
-        def persons = [Roman:'PL', Tom:'USA', Borys:'RU'].collect {val -> new JavaPerson(val.key, new Address(val.value))}
-
-        assert persons.size() == 3
-        assert persons[0].firstName == 'Roman'
-        assert persons[0].address.country == 'PL'
-    }
-
 }

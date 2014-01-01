@@ -3,82 +3,72 @@ package org.spockworkshop.groovy
 import org.spockworkshop.domain.Address
 
 /**
- * GString
- * Elvis
- * Regular expressions as booleans
+ * Collections
+ * Closures
  */
 class Groovy_02 extends GroovyTestCase {
 
-    void test01_GString() {
-        def hello = 'This is "Sparta"'
+    void test01_list() {
+        List<String> strings = ['One', 'Two', 'Tree']
+        List<JavaPerson> persons = [new JavaPerson('Me'), new JavaPerson('You'), new JavaPerson('Her')]
+        def list = []
+        list << 1
+        list << 2
+        list << 3
 
-        assert hello.contains('Sparta')
+        assert strings.size() == 3
+        assert persons.size() == 3
+        assert list.size() == 3
     }
 
-    void test02_GString() {
-        def king = 'Leonidas'
-        def message = "The king ${king} and his ${150 + 150} Spartans"
+    void test02_array() {
+        def integers = [1,2,3] as Integer[]
+        def longs = [1,2,3] as Long[]
 
-        assert message == 'The king Leonidas and his 300 Spartans'
-    }
-    /**
-     * GString and String are two distinct classes
-     * GString and a String won't have the same hashCode nor will they be equal.
-     * There is no automatic coercion between the two types for comparisons or map
-     * keys, so it's sometimes necessary to explicitly invoke toString() on GString objects.
-     */
-    void test03_GStringTrap() {
-        Map<String, Integer> map = new HashMap()
-        map.put("One ${1}", 1)
-        map.put('One 1', 1)
-
-        assert map.toMapString() == '[One 1:1, One 1:1]'
-        assert map.size() == 2
-
+        assert integers.class == Integer[].class
+        assert longs.class == Long[].class
     }
 
-    void test04_elvis() {
-        JavaPerson elvis = new JavaPerson("Elvis")
+    void test03_range() {
+        def alphabet = 'a'..'z'
+        def numbers = 1..24
+        //def numbers = [1..24] -> it's an array with array 1..24
 
-        def displayNameJava = elvis.getLastName() != null ? elvis.getLastName() : elvis.getFirstName()
-        def displayNameElvis = elvis.getLastName()?: elvis.getFirstName()
-
-        assert displayNameJava == "Elvis"
-        assert displayNameElvis == "Elvis"
+        assert alphabet.size() == 26
+        assert alphabet[0..4] == ['a','b','c','d','e']
+        assert numbers.size() == 24
+        assert numbers[0..4] == [1,2,3,4,5]
     }
 
-    void test05_elvis() {
-        JavaPerson elvis = new JavaPerson("Elvis", new Address("USA"))
+    void test04_maps() {
+        def map = [one : 1, two : 2]
+        map['tree'] = 3
 
-        def javaDisplayCountry = 'undefined'
-        if(elvis.getAddress() != null && elvis.getAddress().getCountry() != null) {
-            javaDisplayCountry = elvis.getAddress().getCountry()
-        }
-
-        def groovyDisplayCountry = elvis?.address?.country
-
-        assert javaDisplayCountry == 'USA'
-        assert groovyDisplayCountry == 'USA'
+        assert map.size() == 3
+        assert map['two'] == 2
     }
 
-    void test06_booleanExpression() {
-        def message = null
+    void test05_closures() {
+        def list = ['Rob', 'Ron', 'Elvis', 'Arnold']
 
-        assert message.asBoolean() == false
+        def result = list.findAll {it -> it.startsWith('R')}
 
-        if(!message) {
-            message = 'This is Sparta'
-        }
-
-        assert message == 'This is Sparta'
+        assert result == ['Rob', 'Ron']
     }
 
-    void test07_booleanExpression() {
-        List<String> list = Arrays.asList();
-        Map map = new HashMap();
+    void test06_closures() {
+        def myConst = 5
+        def incByConst = { num -> num + myConst }
 
-        assert list.asBoolean() == false
-        assert map.asBoolean() == false
+        assert incByConst(10) == 15
+    }
+
+    void test07_closures() {
+        def persons = [Roman:'PL', Tom:'USA', Borys:'RU'].collect {val -> new JavaPerson(val.key, new Address(val.value))}
+
+        assert persons.size() == 3
+        assert persons[0].firstName == 'Roman'
+        assert persons[0].address.country == 'PL'
     }
 
 }

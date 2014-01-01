@@ -11,6 +11,10 @@ public class Order {
     private User buyer;
     private OrderStatus orderStatus;
 
+    public Order(){
+        //empty
+    }
+
     public Order(OrderStatus orderStatus) {
         this.orderStatus = orderStatus;
     }
@@ -37,6 +41,11 @@ public class Order {
     public void add(Product product) {
         products.add(product);
     }
+
+    public void add(List<Product> products){
+        this.products.addAll(products);
+    }
+
 
     public String getOrderId() {
         return orderId;
