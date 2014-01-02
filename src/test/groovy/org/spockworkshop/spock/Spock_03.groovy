@@ -42,6 +42,4 @@ class Spock_03 extends Specification {
    @Timeout(value = 5 , unit = TimeUnit.SECONDS)
    //@Timeout(5)
    def "should be file if run more than 5 second"() {}
-
-
 }

@@ -77,7 +77,7 @@ class Groovy_01 extends GroovyTestCase {
 
     void test07_booleanExpression() {
         List<String> list = Arrays.asList();
-        Map map = new HashMap();
+        Map map = null;
 
         assert list.asBoolean() == false
         assert map.asBoolean() == false

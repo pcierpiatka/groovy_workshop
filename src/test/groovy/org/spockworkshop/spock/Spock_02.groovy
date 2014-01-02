@@ -52,10 +52,13 @@ class Spock_02 extends Specification {
             orderService.findOrder("1")
         then:
             thrown(OrderNotFoundException)
+            //notThrown() Specifies that no exception of the given type should be  thrown
+            //noExceptionThrown() Specifies that no exception should be thrown
             //thrown OrderNotFoundException
             //OrderNotFoundException exception = thrown()
             //exception.message
     }
+
 
     @Ignore
     def "readable error message"() {

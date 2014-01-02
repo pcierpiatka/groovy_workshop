@@ -49,8 +49,8 @@ class Spock_04 extends Specification {
         expect:
             Math.max(a, b) == c
         where:
-//          [_, a, b, c] << sql.rows("select * from maxdata")
-          [a, b, _, c] << staticList
+          [_, a, b, c] << sql.rows("select * from maxdata")
+//          [a, b, _, c] << staticList
 
     }
 

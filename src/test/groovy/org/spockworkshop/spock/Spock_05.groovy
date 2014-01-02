@@ -64,9 +64,9 @@ class Spock_05 extends Specification {
 //            1 * orderService.createOrder(*_)     // any argument list including empty list
 //            1 * orderService.createOrder(!null, user)  // any non-null argument
 //            1 * orderService.createOrder(_ as String, _ as User)
-//              _ * orderService./c.*eOrder/('1', user)
-//                _ * _._ // 100 % coverage
-
+//            _ * orderService./c.*eOrder/('1', user)
+//            _ * _._ // 100 % coverage
+//            1 * orderService.createOrder({ it  == '1'}, _) //argument capture
     }
 
     @Ignore

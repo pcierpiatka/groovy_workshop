@@ -1,5 +1,6 @@
 package org.spockworkshop.spock
 
+import spock.lang.Ignore
 import spock.lang.Specification
 
 /**
@@ -24,21 +25,13 @@ class Spock_01 extends Specification {
     }
 
     def "all kind of blocks "() {
-
-        given: "preconditions, data fixtures"
-
-        setup: "alias for given (JUnit syntax)"
-
-        when: "actions that trigger some outcome"
-
-        then: "make assertions about the outcome"
-
+//        given: "preconditions, data fixtures"
+//        setup: "alias for given (JUnit syntax)"
+//        when: "actions that trigger some outcome"
+//        then: "make assertions about the outcome"
+//        where: "applies varied inputs"
+//        and: "subdivides other blocks"
+//        cleanup: "post-conditions, housekeeping"
         expect: "shorthand for when & then"
-
-        where: "applies varied inputs"
-
-        and: "subdivides other blocks"
-
-        cleanup: "post-conditions, housekeeping"
     }
 }

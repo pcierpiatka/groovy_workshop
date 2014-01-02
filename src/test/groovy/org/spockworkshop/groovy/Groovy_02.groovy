@@ -22,7 +22,7 @@ class Groovy_02 extends GroovyTestCase {
     }
 
     void test02_array() {
-        def integers = [1,2,3] as Integer[]
+        def integers = [1,2,3] as Integer[] //default
         def longs = [1,2,3] as Long[]
 
         assert integers.class == Integer[].class
@@ -64,7 +64,8 @@ class Groovy_02 extends GroovyTestCase {
     }
 
     void test07_closures() {
-        def persons = [Roman:'PL', Tom:'USA', Borys:'RU'].collect {val -> new JavaPerson(val.key, new Address(val.value))}
+        def persons = [Roman:'PL', Tom:'USA', Borys:'RU'].collect
+                {val -> new JavaPerson(val.key, new Address(val.value))}
 
         assert persons.size() == 3
         assert persons[0].firstName == 'Roman'
