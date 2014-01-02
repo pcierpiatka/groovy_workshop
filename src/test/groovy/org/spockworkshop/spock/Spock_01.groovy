@@ -23,8 +23,22 @@ class Spock_01 extends Specification {
         println '@AfterClass'
     }
 
-    def "should have setups and cleanups"() {
-        expect:
-        'to read nice print lines'
+    def "all kind of blocks "() {
+
+        given: "preconditions, data fixtures"
+
+        setup: "alias for given (JUnit syntax)"
+
+        when: "actions that trigger some outcome"
+
+        then: "make assertions about the outcome"
+
+        expect: "shorthand for when & then"
+
+        where: "applies varied inputs"
+
+        and: "subdivides other blocks"
+
+        cleanup: "post-conditions, housekeeping"
     }
 }
