@@ -2,7 +2,6 @@ package org.spockworkshop.spock
 
 import groovy.sql.Sql
 import org.spockworkshop.domain.Account
-import spock.lang.Ignore
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -12,55 +11,22 @@ import spock.lang.Unroll
  */
 class Spock_04 extends Specification {
 
-    def "maximum of two numbers"() {
-        expect:
-        Math.max(a, b) == c
-
-        where:
-        a | b || c
-        3 | 5 || 5
-        7 | 0 || 7
-        0 | 0 || 0
-    }
-
-    @Unroll
-    def "maximum of two numbers with default unrolling"() {
-        expect:
-        Math.max(a, b) == c
-
-        where:
-        a | b || c
-        3 | 5 || 5
-        7 | 0 || 7
-        0 | 0 || 0
-    }
-
     @Unroll("first #a second #b result #c")
     def "maximum of two numbers with readable unrolling"() {
         expect:
         Math.max(a, b) == c
-
+        //
         where:
         a | b || c
         3 | 5 || 5
         7 | 0 || 7
         0 | 0 || 0
+        // | == ||  only serves to separate input date from output
+        //0 | 12 | 12
     }
 
     @Unroll
-    def "maximum #c of #a and #b"(a, b, c) {
-        expect:
-        Math.max(a, b) == c
-
-        where:
-        a | b || c
-        3 | 5 || 5
-        7 | 0 || 7
-        0 | 0 || 0
-    }
-
-    @Unroll
-    def "maximum of two numbers using pipes"() {
+    def "maximum #c of #a and #b"() {
         expect:
         Math.max(a, b) == c
 
@@ -72,30 +38,21 @@ class Spock_04 extends Specification {
 
     @Shared
     def sql = Sql.newInstance("jdbc:h2:mem:", "org.h2.Driver")
+    def static staticList = [[3, 5, 4, 5],[7, 0, 4, 7],[0, 0, 4, 0]]
 
     def setupSpec() {
         sql.execute("create table maxdata (id int primary key, a int, b int, c int)")
         sql.execute("insert into maxdata values (1, 3, 7, 7), (2, 5, 4, 5), (3, 9, 9, 9)")
     }
 
-    def "maximum of two numbers using sql "() {
+    def "maximum of two numbers using data provider "() {
         expect:
             Math.max(a, b) == c
         where:
-          [_, a, b, c] << sql.rows("select * from maxdata")
+//          [_, a, b, c] << sql.rows("select * from maxdata")
+          [a, b, _, c] << staticList
 
     }
-
-    def static staticList = [[3, 5, 4, 5],[7, 0, 4, 7],[0, 0, 4, 0]]
-
-    def "maximum of two numbers using static list"() {
-        expect:
-        Math.max(a, b) == c
-
-        where:
-        [a, b, _, c] << staticList
-    }
-
 
     @Unroll
     def "should be able to use with given/when/then"() {

@@ -10,6 +10,7 @@ import org.spockworkshop.service.OrderServiceImpl
 import spock.lang.Ignore
 import spock.lang.Shared
 import spock.lang.Specification
+import spock.lang.Unroll
 
 /**
  *  basic
@@ -17,7 +18,7 @@ import spock.lang.Specification
 class Spock_02 extends Specification {
 
     @Shared
-    OrderService orderService = new OrderServiceImpl();
+    OrderService orderService = new OrderServiceImpl()
 
     def "to run test we need at least expect"() {
         expect:
@@ -26,16 +27,16 @@ class Spock_02 extends Specification {
 
     def "usually we use given/when/then "() {
         given:
-            OrderService orderService = new OrderServiceImpl();
+            OrderService orderService = new OrderServiceImpl()
         when:
             Order newOrder = orderService.createOrder("1", new User())
         then:
             newOrder.orderStatus == OrderStatus.NEW
     }
 
-    def "interactions with when/then "() {
+    def "interactions with when/then"() {
         given:
-            OrderService orderService = new OrderServiceImpl();
+            OrderService orderService = new OrderServiceImpl()
         when:
             Order order = orderService.createOrder("1", new User())
         then:
@@ -51,6 +52,9 @@ class Spock_02 extends Specification {
             orderService.findOrder("1")
         then:
             thrown(OrderNotFoundException)
+            //thrown OrderNotFoundException
+            //OrderNotFoundException exception = thrown()
+            //exception.message
     }
 
     @Ignore

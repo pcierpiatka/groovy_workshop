@@ -39,8 +39,9 @@ class Groovy_01 extends GroovyTestCase {
 
     void test04_elvis() {
         JavaPerson elvis = new JavaPerson("Elvis")
-
-        def displayNameJava = elvis.getLastName() != null ? elvis.getLastName() : elvis.getFirstName()
+        //java style
+        String displayNameJava = elvis.getLastName() != null ? elvis.getLastName() : elvis.getFirstName()
+        //groovy style
         def displayNameElvis = elvis.getLastName()?: elvis.getFirstName()
 
         assert displayNameJava == "Elvis"
@@ -51,10 +52,11 @@ class Groovy_01 extends GroovyTestCase {
         JavaPerson elvis = new JavaPerson("Elvis", new Address("USA"))
 
         def javaDisplayCountry = 'undefined'
+        //java style
         if(elvis.getAddress() != null && elvis.getAddress().getCountry() != null) {
             javaDisplayCountry = elvis.getAddress().getCountry()
         }
-
+        //groovy style
         def groovyDisplayCountry = elvis?.address?.country
 
         assert javaDisplayCountry == 'USA'

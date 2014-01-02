@@ -26,7 +26,6 @@ class Spock_03 extends Specification {
         true
     }
 
-
     @IgnoreIf({ System.getProperty("os.name").contains("windows") })
     //@Requires({ System.getProperty("os.name").contains("linux") })
     def "should be ignored on windows"() {

@@ -4,15 +4,15 @@ import org.spockworkshop.domain.Address
 
 /**
  * JavaPojo
- * GroovyPojo
+ * GroovyPogo
  */
 class Groovy_03 extends GroovyTestCase {
 
     void test01_construction() {
-
+        //java style
         JavaPerson elvis = new JavaPerson('Elvis', 'Presley')
         JavaPerson violetta = new JavaPerson('Violetta', 'Villas', new Address('PL'))
-
+        //groovy style
         GroovyPerson brian = new GroovyPerson(firstName: 'Brian', lastName: 'Johnson', address: new Address('USA'))
         GroovyPerson frank = new GroovyPerson(firstName : 'Frank')
         GroovyPerson german = new GroovyPerson(address: new Address('GER'))
