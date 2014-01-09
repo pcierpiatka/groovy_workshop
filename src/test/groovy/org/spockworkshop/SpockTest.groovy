@@ -27,7 +27,6 @@ class SpockTest extends Specification {
         with(order) {
             orderStatus == OrderStatus.SHIPMENT
             products.size() == 3
-        fail("travis notification test")
         }
     }
 }
