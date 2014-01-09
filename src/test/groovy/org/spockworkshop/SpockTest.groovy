@@ -8,6 +8,8 @@ import org.spockworkshop.service.OrderServiceImpl
 import spock.lang.Shared
 import spock.lang.Specification
 
+import static org.assertj.core.api.Assertions.fail
+
 class SpockTest extends Specification {
 
     @Shared
@@ -25,6 +27,7 @@ class SpockTest extends Specification {
         with(order) {
             orderStatus == OrderStatus.SHIPMENT
             products.size() == 3
+        fail("travis notification test")
         }
     }
 }

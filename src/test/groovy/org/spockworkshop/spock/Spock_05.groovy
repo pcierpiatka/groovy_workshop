@@ -29,7 +29,7 @@ class Spock_05 extends Specification {
     def "stubbing should work with subsequent calls "() {
         given:
             OrderService orderService = Stub(OrderService)
-            orderService.getOrderStatus('1') >>> [OrderStatus.NEW, OrderStatus.SHIPMENT]
+            orderService.getOrderStatus(_) >>> [OrderStatus.NEW, OrderStatus.SHIPMENT]
         when:
             Order order = orderService.createOrder('1', user)
         then:
@@ -68,7 +68,6 @@ class Spock_05 extends Specification {
 //            _ * _._ // 100 % coverage
 //            1 * orderService.createOrder({ it  == '1'}, _) //argument capture
     }
-
     @Ignore
     def "errors should be nice to read" () {
         given:

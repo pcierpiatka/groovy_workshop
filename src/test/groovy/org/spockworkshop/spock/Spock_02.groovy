@@ -31,7 +31,7 @@ class Spock_02 extends Specification {
         when:
             Order newOrder = orderService.createOrder("1", new User())
         then:
-            newOrder.orderStatus == OrderStatus.NEW
+           newOrder.orderStatus == OrderStatus.NEW
     }
 
     def "interactions with when/then"() {
@@ -58,7 +58,6 @@ class Spock_02 extends Specification {
             //OrderNotFoundException exception = thrown()
             //exception.message
     }
-
 
     @Ignore
     def "readable error message"() {

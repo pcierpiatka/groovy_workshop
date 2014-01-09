@@ -36,7 +36,6 @@ class Groovy_03 extends GroovyTestCase {
         person.with {
             firstName = 'Ron'
             lastName = 'Romanski'
-            it
         }
         assert person.firstName == 'Ron'
     }
@@ -50,4 +49,47 @@ class Groovy_03 extends GroovyTestCase {
         }
         assert person.firstName == 'Ron'
     }
+
+    void test05_constructor() {
+
+        Us us = new Us(a:'A', b:'B', c:'c')
+
+        assert  us.a == 'A'
+    }
+
+
+    class Us {
+        private String a;
+        private String b;
+        private String c;
+
+ /*       Us(String a) {
+            this.a = a
+        }
+*/
+        String getA() {
+            return a
+        }
+
+        void setA(String a) {
+            this.a = a
+        }
+
+        String getB() {
+            return b
+        }
+
+        void setB(String b) {
+            this.b = b
+        }
+
+        String getC() {
+            return c
+        }
+
+        void setC(String c) {
+            this.c = c
+        }
+    }
+
 }

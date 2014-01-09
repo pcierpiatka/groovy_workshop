@@ -1,6 +1,5 @@
 package org.spockworkshop.spock
 
-import spock.lang.Ignore
 import spock.lang.Specification
 
 /**

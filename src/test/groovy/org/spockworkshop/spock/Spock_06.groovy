@@ -1,5 +1,6 @@
 package org.spockworkshop.spock
 
+import org.assertj.core.api.Assertions
 import org.spockworkshop.domain.Order
 import org.spockworkshop.domain.OrderStatus
 import org.spockworkshop.domain.Product
