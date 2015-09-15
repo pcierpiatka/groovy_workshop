@@ -1,27 +1,25 @@
-apply plugin: "groovy"
-apply plugin: "idea"
-apply plugin: 'maven'
+group 'edu.pci'
+version '0.0.1'
 
-sourceCompatibility = 1.7
-version = '1.0'
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
 
 repositories {
-    mavenLocal()
+    // Spock releases are available from Maven Central
     mavenCentral()
+    // Spock snapshots are available from the Sonatype OSS snapshot repository
+    maven { url "http://oss.sonatype.org/content/repositories/snapshots/" }
 }
 
 dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.1'
+    compile "org.codehaus.groovy:groovy-all:2`.4.1"
+    testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
+    testCompile "com.h2database:h2:1.3.174"
 
-    testCompile(
-            [group: "org.codehaus.groovy", name: "groovy-all", version: "2.2.1"],
-            [group: "org.spockframework", name: "spock-core", version: "0.7-groovy-2.0"],
-            [group: "org.assertj", name: "assertj-core", version: "1.5.0"],
-            [group: "com.h2database", name:"h2", version:"1.3.174"]
+    // optional dependencies for using Spock
+    testCompile "org.hamcrest:hamcrest-core:1.3" // only necessary if Hamcrest matchers are used
 
-    )
-
-    testRuntime(
-            [group: "cglib", name: "cglib-nodep", version: "2.2"], // enables mocking of classes (in addition to interfaces)
-            [group: "org.objenesis", name: "objenesis", version: "1.2"] // enables mocking of classes without default constructor (together with CGLIB)
-    )
 }

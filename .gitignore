@@ -6,6 +6,9 @@ Intellij Idea project files
 
 # gradle config
 .gradle
+gradle/
+gradlew
+gradlew.bat
 
 # project binaries
 build

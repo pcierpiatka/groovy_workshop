@@ -8,7 +8,6 @@ import org.spockworkshop.service.OrderServiceImpl
 import spock.lang.Shared
 import spock.lang.Specification
 
-import static org.assertj.core.api.Assertions.fail
 
 class SpockTest extends Specification {
 
@@ -17,8 +16,7 @@ class SpockTest extends Specification {
 
     def "should checkout order"() {
         given:
-        Order order = new Order()
-        order.products = [new Product("Door"), new Product("Window"), new Product("Chair")]
+        Order order = new Order(products:  [new Product("Door"), new Product("Window"), new Product("Chair")])
 
         when:
         orderService.checkout(order)
