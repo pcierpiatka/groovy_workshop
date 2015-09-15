@@ -14,4 +14,6 @@ public interface OrderService {
 
     OrderStatus getOrderStatus(String orderId);
 
+    int orderIdForSomeImportantThing();
+
 }

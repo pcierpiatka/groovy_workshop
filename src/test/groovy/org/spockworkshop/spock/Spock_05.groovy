@@ -78,4 +78,17 @@ class Spock_05 extends Specification {
              2 * orderService.createOrder('1', user)
     }
 
+    def "should be easy and readable to do chaining calls"() {
+        given:
+        OrderService orderService = Mock(OrderService);
+        orderService.orderIdForSomeImportantThing() >>> [1,2,3]
+        expect:
+        orderService.orderIdForSomeImportantThing() == 1
+        and:
+        orderService.orderIdForSomeImportantThing() == 2
+        and:
+        orderService.orderIdForSomeImportantThing() == 3
+
+    }
+
 }

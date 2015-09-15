@@ -12,6 +12,9 @@ public class OrderServiceImpl implements OrderService {
 
     private Map<String, Order> orderRepository = new HashMap<>();
 
+    private int importantThing = 0;
+
+
     @Override
     public Order createOrder(String orderId, User buyer) {
         Order newOrder = new Order(orderId, buyer);
@@ -38,5 +41,11 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public OrderStatus getOrderStatus(String orderId) {
         return findOrder(orderId).getOrderStatus();
+    }
+
+    @Override
+    public int orderIdForSomeImportantThing() {
+        importantThing = importantThing + 1;
+        return importantThing;
     }
 }
