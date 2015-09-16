@@ -74,4 +74,25 @@ class Spock_04 extends Specification {
           10.0  |  5.0    ||   5.0
            3.0  |  2.0    ||   1.0
     }
+
+    @Unroll
+    def "should balance #balance after withdraw #amount be equal to #remaning"() {
+        given:
+        def account = new Account(balance)
+
+        when:
+        account.withdraw(amount)
+
+        then:
+        account.balance == remaning
+
+        //Used in a then-block to access an expression's value at the time just
+        //before the previous where-block was entered
+        //account.balance == old(account.balance) - amount
+
+        where:
+        balance | amount  || remaning
+        10.0    |  5.0    ||   5.0
+        3.0     |  2.0    ||   1.0
+    }
 }
