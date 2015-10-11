@@ -87,7 +87,7 @@ class Spock_02 extends Specification {
 
     def "usually we use given/when/then BDD style "() {
         given:
-            OrderService orderService = new OrderServiceImpl()
+        OrderService orderService = new OrderServiceImpl()
         when:
             Order newOrder = orderService.createOrder("1", new User())
         then:
@@ -146,6 +146,5 @@ class Spock_02 extends Specification {
         expect:
             maps.beer.dark == 'Heineken'
     }
-
 
 }

@@ -27,8 +27,8 @@ class Spock_06 extends Specification {
             orderService.checkout(order)
 
         then:
-           assertThat(order).hasProducts(3).hasStatus(OrderStatus.SHIPMENT).hasProduct("Window")
-//           assertThat order hasProducts 3 hasStatus OrderStatus.SHIPMENT hasProduct "Window"
+    assertThat(order).hasProducts(3).hasStatus(OrderStatus.SHIPMENT).hasProduct("Window")
+//  assertThat order hasProducts 3 hasStatus OrderStatus.SHIPMENT hasProduct "Window"
 //           Assertions.assertThat(order.products).hasSize(3)
 //           Assertions.assertThat order.products hasSize 3
     }

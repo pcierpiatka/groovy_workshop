@@ -13,7 +13,8 @@ class Groovy_03 extends GroovyTestCase {
         JavaPerson elvis = new JavaPerson('Elvis', 'Presley')
         JavaPerson violetta = new JavaPerson('Violetta', 'Villas', new Address('PL'))
         //groovy style
-        GroovyPerson brian = new GroovyPerson(firstName: 'Brian', lastName: 'Johnson', address: new Address('USA'))
+        GroovyPerson brian = new GroovyPerson(firstName: 'Brian', lastName: 'Johnson',
+                address: new Address('USA'))
         GroovyPerson frank = new GroovyPerson(firstName : 'Frank')
         GroovyPerson german = new GroovyPerson(address: new Address('GER'))
 
@@ -38,6 +39,16 @@ class Groovy_03 extends GroovyTestCase {
             lastName = 'Romanski'
         }
         assert person.firstName == 'Ron'
+    }
+
+
+    void test() {
+        JavaPerson p = new JavaPerson()
+        p.with {
+            firstName = "Roman"
+        }
+
+        assert p.firstName
     }
 
     void test04_with() {

@@ -67,6 +67,7 @@ class Groovy_02 extends GroovyTestCase {
         def persons = [Roman:'PL', Tom:'USA', Borys:'RU'].collect
                 {val -> new JavaPerson(val.key, new Address(val.value))}
 
+
         assert persons.size() == 3
         assert persons[0].firstName == 'Roman'
         assert persons[0].address.country == 'PL'

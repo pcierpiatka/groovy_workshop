@@ -68,6 +68,7 @@ class Spock_05 extends Specification {
 //            _ * _._ // 100 % coverage
 //            1 * orderService.createOrder({ it  == '1'}, _) //argument capture
     }
+
     @Ignore
     def "errors should be nice to read" () {
         given:

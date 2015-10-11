@@ -39,6 +39,7 @@ class Spock_03 extends Specification {
     @See("JUnit @Test(dependsOnMethods = { \"step 1\"})")
     @Stepwise
     class Spock_03_a extends Specification {
+
         def "step 3"() {
             println "3"
             expect: true
