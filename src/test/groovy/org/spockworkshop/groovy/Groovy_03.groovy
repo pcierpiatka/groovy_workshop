@@ -42,15 +42,6 @@ class Groovy_03 extends GroovyTestCase {
     }
 
 
-    void test() {
-        JavaPerson p = new JavaPerson()
-        p.with {
-            firstName = "Roman"
-        }
-
-        assert p.firstName
-    }
-
     void test04_with() {
 
         GroovyPerson person = new GroovyPerson().with {
